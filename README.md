@@ -67,25 +67,26 @@ If you're migrating to a new PC, you need to preserve **two critical folders**:
    ```
 
 #### **On New PC:**
+
 1. **Install Claude Desktop**
-2. **Launch Claude and create a dummy Cowork task**
-   - This initializes the VHDX file structure
-   - Just create any simple task (e.g., "list files in Downloads")
-3. **Close Claude.exe completely**
-4. **(Optional) Externalize VHDX to C:\ClaudeData:**
-```batch
+
+2. **Close Claude.exe completely**
+
+3. **(Optional) Externalize VHDX to C:\ClaudeData:**
+   ```batch
    move_claude_vmbundles.bat
-```
+   ```
    - Skip this step if you want to keep VHDX in the default location
-5. **Restart PC**
 
-6. **Launch Claude and create a dummy Cowork task**
+4. **Restart PC**
+
+5. **Launch Claude and create a dummy Cowork task**
    - This initializes the VHDX file structure
    - Just create any simple task (e.g., "list files in Downloads")
 
-7. **Close Claude.exe completely**
+6. **Close Claude.exe completely**
 
-8. **Restore backup using robocopy:**
+7. **Restore backup using robocopy:**
 
    **If you externalized (step 3):**
    ```powershell
@@ -103,15 +104,15 @@ If you're migrating to a new PC, you need to preserve **two critical folders**:
             /MIR /COPY:DAT /R:1 /W:1
    ```
 
-9. **Fix AppContainer permissions (Administrator PowerShell):**
+8. **Fix AppContainer permissions (Administrator PowerShell):**
    ```powershell
    icacls C:\ClaudeData /grant '*S-1-15-2-1:(OI)(CI)F' /T
    ```
    - If you kept default location, adjust path accordingly
 
-10. **Restart PC**
+9. **Restart PC**
 
-11. **Launch Claude**
+10. **Launch Claude**
     - If synchronization fails, **restart PC again** (may require multiple reboots)
 
 ### What Gets Preserved
