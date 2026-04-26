@@ -4,9 +4,13 @@ Tools and guides for managing Claude Cowork's virtual disk (VHDX) and preventing
 
 ## 🚨 Problem
 
+## 🚨 Problem
+
 **Claude Cowork silently consumes several GB to tens of GB on your C: drive.**
 
-When you use Cowork, it creates a virtual disk (VHDX file) in:
+Claude Desktop is distributed as a **Microsoft Store app (MSIX package)**, not a traditional Windows application. This means data is stored in a package-specific location that most users don't check.
+
+When you use Cowork, it creates a virtual disk (VHDX file) using Virtual Machine Platform in:
 ```
 C:\Users\<YourName>\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Local\vm_bundles\
 ```
